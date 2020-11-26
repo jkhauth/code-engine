@@ -16,11 +16,15 @@ function generatePassword() {
   
   // NEED TO MAKE TO TAKE USERS INPUT TO PROVIDE PASSWORD LENGTH  
   var passwordLength = prompt("How long would you like your password?");
-      // IF USER DOESNT PUT IN A READABLE NUMBER OR INPUT TO PROVIDE LENGTH
+      // IF USER DOESNT PUT IN A NUMBER MATCHING CRITERIA
       if (passwordLength < 8 || passwordLength > 128){
         alert("Please select a number 8 to 128")
         return;
-      
+      }
+      // CHECKS IF THE INPUT IS A NUMBER
+      if (!Number.isInteger((passwordLength))) {
+        alert("Please enter a number")
+        return;
       }
         // CRITERIA OF CHOICES
         var useUpper = confirm("Would you like uppercase?");
@@ -50,7 +54,7 @@ function generatePassword() {
                   var lowerNumber = allLowercase + allNums;
                   var lowerSpec = allLowercase + allSpec;
                   var numsSpecs = allNums + allSpec;
-          }
+}
       
     
               
