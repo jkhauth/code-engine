@@ -63,31 +63,42 @@ function generatePassword() {
                   
                   // PUTTING RESPECTED OUTCOMES TOGETHER WITH EMPTY PASSWORD
 
-                        // USER ONLY WANTS CAPS
+                        // USER ONLY WANTS CAPS - WORKS
                         if (useUpper && !useLower && !useNumbers && !useSpecial){
                         password = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)]);
                         }
-                        // USER ONLY WANTS LOWER
+                        else
+                        // USER ONLY WANTS LOWER - WORKS
                         if (useLower && !useUpper && !useNumbers && !useSpecial){
                         password = password.concat(allLowercase[Math.floor(Math.random() * allLowercase.length)]);
                         }
-                        // USER ONLY WANT NUMBERS
+                        else
+                        // USER ONLY WANT NUMBERS - WORKS
                         if (useNumbers && !useLower && !useUpper && !useSpecial){
                         password = password.concat(allNums[Math.floor(Math.random() * allNums.length)]);
                         }
-                        // USER ONLY WANTS SPECIAL CHARACTERS
+                        else
+                        // USER ONLY WANTS SPECIAL CHARACTERS - WORKS
                         if (!useNumbers && !useLower && !useUpper && useSpecial){
                         password = password.concat(allSpec[Math.floor(Math.random() * allSpec.length)]);
                         }
-                        // UPPER LOWER
+                        else
+                        // UPPER LOWER - WORKS
                         if (useUpper && useLower && !useNumbers && !useSpecial){
                         password = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allLowercase[Math.floor(Math.random() * allLowercase.length)]);
                         }
-                        // UPPER NUMBERif (useUpper && useLower && !useNumbers && !useSpecial){
-                        password = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allLowercase[Math.floor(Math.random() * allLowercase.length)]);
-                      }
-                        // UPPER SPEC
-                        // UPPER - LOW - NUM
+                        else
+                        // UPPER NUMBER - WORKS //
+                        if (useUpper && !useLower && useNumbers && !useSpecial){
+                          password = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allNums[Math.floor(Math.random() * allNums.length)]);
+                          }
+                        else
+                        // UPPER SPEC - WORKS
+                        if (useUpper && !useLower && !useNumbers && useSpecial){
+                          password = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allSpec[Math.floor(Math.random() * allSpec.length)]);
+                          }
+                        else
+                        // UPPER LOW NUM - WORKS
                         if (useUpper && useLower && useNumbers && !useSpecial){
                           password = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allLowercase[Math.floor(Math.random() * allLowercase.length)] , allNums[Math.floor(Math.random() * allNums.length)]);
                           }
