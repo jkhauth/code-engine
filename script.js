@@ -17,35 +17,47 @@ function generatePassword() {
     
   var passwordLength = prompt("How long would you like your password?");
 
-  if (passwordLength >= 8 && 128){
+  
     //CRITERIA OF CHOICES
     
-    var AllChoices = ["this"];
+    var AllChoices = [""];
 
+    for (var i = 0; i < passwordLength, i++) {
+    //CHARACTERS TO CHOOSE FROM
+    var allUppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];  
+    var allLowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    var nums = ["0", "1", "2", "3", "4","5", "6", "7", "8", "9"]
     //UPPERCASE PROMPT
     var useUpper = confirm("Would you like uppercase?")
         if (useUpper === true) {
-        var allUppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];  
         var randomIndex = Math.floor(Math.random() * allUppercase.length);      
         passwordText = allUppercase[randomIndex].concat(AllChoices);
                
-        }        
-      //IF USER DOESN'T WANT UPPERCASE 
-        else {
-        alert("YOU DONT WANT CAPS");
         }
+             
+    //LOWERCASE PROMPT
+    var useLower = confirm("Would you like lowercase?")
+        if (useLower === true) {
+        var allLowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        var randomIndex = Math.floor(Math.random() * allLowercase.length);
+        passwordText = allLowercase[randomIndex].concat(AllChoices)
+
+        }
+    //NUMBERS PROMPT
+    //SPECIAL CHARACTERS PROMPT
+        
         
          
         
-    }
+    
+  
+  
+  
    
-    //IF USER DOESN'T ENTER A VALID LENGTH
-    else {
-      alert("Please enter a valid length")
-    }
-
-  document.getElementById("password").innerHTML = passwordText;
-} 
+  
+  
+document.getElementById("password").innerHTML = passwordText;
+ 
 
 
 
