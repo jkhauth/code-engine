@@ -39,7 +39,7 @@ function generatePassword() {
       // PULLING ALL CHOICES TOGETHER FROM RANDOM INDEX IN ARRAY
       var AllChoices = [];
       // CHOICES NEED TO BE THE LENGTH OF USERS CHOICE
-      // for (var i = 0; i < passwordLength, i++) {
+      for (var i = 0; i < passwordLength; i++){
         //CHARACTERS TO CHOOSE FROM
           var allUppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];  
           var allLowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -57,18 +57,15 @@ function generatePassword() {
               var lowerNumber = allLowercase + allNums;
               var lowerSpec = allLowercase + allSpec;
               var numsSpecs = allNums + allSpec;
+                  // PUTTING RESPECTED OUTCOMES TOGETHER WITH EMPTY PASSWORD
+                  if (useUpper && !useLower && !useNumbers && !useSpecial){
+                    password = AllChoices.concat(upperLower);
+                  }
+    } return password;
 }
       
-    
+
               
-
-
-
-
-
-   
-    
-
 //SENDS PASSWORD TO TEXT BOX
 
 
