@@ -62,9 +62,22 @@ function generatePassword() {
               var numsSpecs = allNums + allSpec;
                   
                   // PUTTING RESPECTED OUTCOMES TOGETHER WITH EMPTY PASSWORD
-                        //USER ONLY WANTS CAPS
+                  
+                        // USER ONLY WANTS CAPS
                         if (useUpper && !useLower && !useNumbers && !useSpecial){
                         password = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)]);
+                        }
+                        // USER ONLY WANTS LOWER
+                        if (useLower && !useUpper && !useNumbers && !useSpecial){
+                        password = password.concat(allLowercase[Math.floor(Math.random() * allLowercase.length)]);
+                        }
+                        // USER ONLY WANT NUMBERS
+                        if (useNumbers && !useLower && !useUpper && !useSpecial){
+                        password = password.concat(allNums[Math.floor(Math.random() * allNums.length)]);
+                        }
+                        // USER ONLY WANTS SPECIAL CHARACTERS
+                        if (useSpecial && !useUpper && !useLower && !useNumbers){
+                        password = password.concat(allSpec[Math.floor(Math.random() * allSpec.length)]);
                         }
 
     } return password.join("");
