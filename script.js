@@ -67,7 +67,7 @@ function generatePassword() {
                         password = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)]);
                         }
 
-    } return password;
+    } return password.join("");
 }
       
 
