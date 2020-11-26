@@ -33,14 +33,24 @@ function generatePassword() {
           var allLowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
           var allNums = ["0", "1", "2", "3", "4","5", "6", "7", "8", "9"]
           var allSpec = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
-    //UPPERCASE PROMPT
-       
-             
-    //LOWERCASE PROMPT
-    
-        
-    //NUMBERS PROMPT
-    //SPECIAL CHARACTERS PROMPT
+            // ALL RESPECTED OUTCOMES FROM DIFFERENT CHOICES
+              var upperLower = allUppercase + allLowercase; 
+              var upperNumber = allUppercase + allNums;
+              var upperSpec = allUppercase + allSpec;
+              var upperLowNum = allUppercase + allLowercase + allNums;
+              var upperLowSpec = allUppercase + allLowercase + allSpec;
+              var upperNumSpec = allUppercase + allNums + allSpec;
+              var allCharacters = allUppercase + allLowercase + allNums + allSpec;
+              var lowerNumSpec = allLowercase + allNums + allSpec;
+              var lowerNumber = allLowercase + allNums;
+              var lowerSpec = allLowercase + allSpec;
+              var numsSpecs = allNums + allSpec;
+              
+
+
+
+
+
   }   
     
 
