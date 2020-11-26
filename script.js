@@ -24,14 +24,15 @@ function generatePassword() {
   var useSpecial = confirm("Would you like to use special characters?");
 
  
-    
-    // var AllChoices = [""];
-
-    // for (var i = 0; i < passwordLength, i++) {
-    //CHARACTERS TO CHOOSE FROM
-    // var allUppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];  
-    // var allLowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    // var nums = ["0", "1", "2", "3", "4","5", "6", "7", "8", "9"]
+      // PULLING ALL CHOICES TOGETHER FROM RANDOM INDEX IN ARRAY
+      var AllChoices = [];
+      // CHOICES NEED TO BE THE LENGTH OF USERS CHOICE
+      for (var i = 0; i < passwordLength, i++) {
+        //CHARACTERS TO CHOOSE FROM
+          var allUppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];  
+          var allLowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+          var allNums = ["0", "1", "2", "3", "4","5", "6", "7", "8", "9"]
+          var allSpec = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
     //UPPERCASE PROMPT
        
              
