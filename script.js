@@ -49,10 +49,10 @@ function generatePassword() {
           var allSpec = ['!', "\"", '#', "'", '$','%','&','(', ')', '*','+','-','.','//',':',';','<','=','>','?','@','[',']','^','_','`','{','|',"'", '}', '~'];
               
               // ALL RESPECTED OUTCOMES FROM DIFFERENT CHOICES
-              var upperLower = allUppercase + allLowercase; 
-              var upperNumber = allUppercase + allNums;
-              var upperSpec = allUppercase + allSpec;
-              var upperLowNum = allUppercase + allLowercase + allNums;
+              var upperLower = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allLowercase[Math.floor(Math.random() * allLowercase.length)]); 
+              var upperNumber = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allNums[Math.floor(Math.random() * allNums.length)]);
+              var upperSpec = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allSpec[Math.floor(Math.random() * allSpec.length)]);
+              var upperLowNum =  password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allLowercase[Math.floor(Math.random() * allLowercase.length)] , allNums[Math.floor(Math.random() * allNums.length)]);
               var upperLowSpec = allUppercase + allLowercase + allSpec;
               var upperNumSpec = allUppercase + allNums + allSpec;
               var allCharacters = allUppercase + allLowercase + allNums + allSpec;
@@ -85,37 +85,54 @@ function generatePassword() {
                         else
                         // UPPER LOWER - WORKS
                         if (useUpper && useLower && !useNumbers && !useSpecial){
-                        password = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allLowercase[Math.floor(Math.random() * allLowercase.length)]);
+                        password = upperLower;
                         }
                         else
                         // UPPER NUMBER - WORKS //
                         if (useUpper && !useLower && useNumbers && !useSpecial){
-                          password = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allNums[Math.floor(Math.random() * allNums.length)]);
-                          }
+                        password = upperNumber;
+                        }
                         else
                         // UPPER SPEC - WORKS
                         if (useUpper && !useLower && !useNumbers && useSpecial){
-                          password = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allSpec[Math.floor(Math.random() * allSpec.length)]);
-                          }
+                        password = upperSpec;
+                        }
                         else
                         // UPPER LOW NUM - WORKS
                         if (useUpper && useLower && useNumbers && !useSpecial){
-                          password = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allLowercase[Math.floor(Math.random() * allLowercase.length)] , allNums[Math.floor(Math.random() * allNums.length)]);
+                          password = upperLowNum;
                           }
-                        // UPPER LOWSPEC
-                        // UPPER NUMSPEC
-                        // LOWERNUMSPEC
-                        // LOWERNUMBER
-                        // LOWERSPEC
-                        // NUMSPECS
+                        else
 
-                        // USER WANTS UPPER AND LOWER AND NUMBERS
-                        
+                        // UPPER LOW SPEC
+                        if (useUpper && useLower && !useNumbers && useSpecial){
+                          password = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allLowercase[Math.floor(Math.random() * allLowercase.length)] , allSpec[Math.floor(Math.random() * allSpec.length)]);
+                          }
+                        else
+
+                        // UPPER NUM SPEC
+                        if (useUpper && !useLower && useNumbers && useSpecial){
+                          password = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allNums[Math.floor(Math.random() * allNums.length)] , allSpec[Math.floor(Math.random() * allSpec.length)]);
+                          }
+      }                 
+                        // LOWERNUM SPEC
                         
 
-    } return password;
-}
-      
+                        
+                        // LOWER NUMBER
+                        
+
+                        
+                        // LOWER SPEC
+                        
+
+                        
+                        // NUM SPECS
+
+                        // USER WANTS ALL CRITERIA
+    return password;
+
+}     
 
               
 //SENDS PASSWORD TO TEXT BOX
