@@ -58,9 +58,10 @@ function generatePassword() {
               var lowerSpec = allLowercase + allSpec;
               var numsSpecs = allNums + allSpec;
                   // PUTTING RESPECTED OUTCOMES TOGETHER WITH EMPTY PASSWORD
-                  if (useUpper && !useLower && !useNumbers && !useSpecial){
-                    password = AllChoices.concat(upperLower);
-                  }
+                        //USER ONLY WANTS CAPS
+                        if (useUpper && !useLower && !useNumbers && !useSpecial){
+                        password = AllChoices.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)]);
+                        }
     } return password;
 }
       
