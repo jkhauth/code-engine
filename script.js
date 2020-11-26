@@ -19,21 +19,23 @@ function generatePassword() {
 
   if (passwordLength >= 8 && 128){
     //CRITERIA OF CHOICES
-    var allUppercase = ["A","B","D"];
-    var randomIndex = Math.floor(Math.random() * allUppercase.length);
+    
     var AllChoices = ["this"];
 
     //UPPERCASE PROMPT
     var useUpper = confirm("Would you like uppercase?")
         if (useUpper === true) {
-                 
+        var allUppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];  
+        var randomIndex = Math.floor(Math.random() * allUppercase.length);      
         passwordText = allUppercase[randomIndex].concat(AllChoices);
-        alert(passwordText);        
+               
         }        
       //IF USER DOESN'T WANT UPPERCASE 
         else {
         alert("YOU DONT WANT CAPS");
         }
+        
+         
         
     }
    
@@ -42,6 +44,7 @@ function generatePassword() {
       alert("Please enter a valid length")
     }
 
+  document.getElementById("password").innerHTML = passwordText;
 } 
 
 
