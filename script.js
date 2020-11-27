@@ -52,91 +52,42 @@ function generatePassword() {
               var upperLower = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allLowercase[Math.floor(Math.random() * allLowercase.length)]); 
               var upperNumber = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allNums[Math.floor(Math.random() * allNums.length)]);
               var upperSpec = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allSpec[Math.floor(Math.random() * allSpec.length)]);
-              var upperLowNum =  password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allLowercase[Math.floor(Math.random() * allLowercase.length)] , allNums[Math.floor(Math.random() * allNums.length)]);
-              var upperLowSpec = allUppercase + allLowercase + allSpec;
-              var upperNumSpec = allUppercase + allNums + allSpec;
+              var upperLowNum = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allLowercase[Math.floor(Math.random() * allLowercase.length)] , allNums[Math.floor(Math.random() * allNums.length)]);
+              var upperLowSpec = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allLowercase[Math.floor(Math.random() * allLowercase.length)] , allSpec[Math.floor(Math.random() * allSpec.length)]);
+              var upperNumSpec = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allNums[Math.floor(Math.random() * allNums.length)] , allSpec[Math.floor(Math.random() * allSpec.length)]);
               var allCharacters = allUppercase + allLowercase + allNums + allSpec;
-              var lowerNumSpec = allLowercase + allNums + allSpec;
-              var lowerNumber = allLowercase + allNums;
+              var lowerNumSpec =  password.concat(allLowercase[Math.floor(Math.random() * allLowercase.length)] , allNums[Math.floor(Math.random() * allNums.length)] , allSpec[Math.floor(Math.random() * allSpec.length)]);
+              var lowerNumber = password.concat(allLowercase[Math.floor(Math.random() * allLowercase.length)] , allNums[Math.floor(Math.random() * allNums.length)]);
               var lowerSpec = allLowercase + allSpec;
               var numsSpecs = allNums + allSpec;
-                  
+          
                   // PUTTING RESPECTED OUTCOMES TOGETHER WITH EMPTY PASSWORD
 
                         // USER ONLY WANTS CAPS - WORKS
                         if (useUpper && !useLower && !useNumbers && !useSpecial){
                         password = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)]);
                         }
-                        else
-                        // USER ONLY WANTS LOWER - WORKS
-                        if (useLower && !useUpper && !useNumbers && !useSpecial){
+                        else if (!useUpper && useLower && !useNumbers && !useSpecial)
                         password = password.concat(allLowercase[Math.floor(Math.random() * allLowercase.length)]);
-                        }
-                        else
-                        // USER ONLY WANT NUMBERS - WORKS
-                        if (useNumbers && !useLower && !useUpper && !useSpecial){
+                        
+                        else if (!useUpper && !useLower && useNumbers && !useSpecial)
                         password = password.concat(allNums[Math.floor(Math.random() * allNums.length)]);
-                        }
-                        else
-                        // USER ONLY WANTS SPECIAL CHARACTERS - WORKS
-                        if (!useNumbers && !useLower && !useUpper && useSpecial){
+                        
+                        else if (!useUpper && !useLower && !useNumbers && useSpecial)
                         password = password.concat(allSpec[Math.floor(Math.random() * allSpec.length)]);
-                        }
-                        else
-                        // UPPER LOWER - WORKS
-                        if (useUpper && useLower && !useNumbers && !useSpecial){
-                        password = upperLower;
-                        }
-                        else
-                        // UPPER NUMBER - WORKS //
-                        if (useUpper && !useLower && useNumbers && !useSpecial){
-                        password = upperNumber;
-                        }
-                        else
-                        // UPPER SPEC - WORKS
-                        if (useUpper && !useLower && !useNumbers && useSpecial){
-                        password = upperSpec;
-                        }
-                        else
-                        // UPPER LOW NUM - WORKS
-                        if (useUpper && useLower && useNumbers && !useSpecial){
-                          password = upperLowNum;
-                          }
-                        else
-
-                        // UPPER LOW SPEC
-                        if (useUpper && useLower && !useNumbers && useSpecial){
-                          password = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allLowercase[Math.floor(Math.random() * allLowercase.length)] , allSpec[Math.floor(Math.random() * allSpec.length)]);
-                          }
-                        else
-
-                        // UPPER NUM SPEC
-                        if (useUpper && !useLower && useNumbers && useSpecial){
-                          password = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allNums[Math.floor(Math.random() * allNums.length)] , allSpec[Math.floor(Math.random() * allSpec.length)]);
-                          }
-      }                 
-                        // LOWERNUM SPEC
-                        
-
-                        
-                        // LOWER NUMBER
-                        
-
-                        
-                        // LOWER SPEC
-                        
-
-                        
-                        // NUM SPECS
-
-                        // USER WANTS ALL CRITERIA
-    return password;
-
-}     
-
-              
-//SENDS PASSWORD TO TEXT BOX
-
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      }
+                      
+                      return password;
+                    }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
