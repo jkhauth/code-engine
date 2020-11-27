@@ -55,9 +55,7 @@ function generatePassword() {
               var upperLowNum = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allLowercase[Math.floor(Math.random() * allLowercase.length)] , allNums[Math.floor(Math.random() * allNums.length)]);
               var upperLowSpec = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allLowercase[Math.floor(Math.random() * allLowercase.length)] , allSpec[Math.floor(Math.random() * allSpec.length)]);
               var upperNumSpec = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allNums[Math.floor(Math.random() * allNums.length)] , allSpec[Math.floor(Math.random() * allSpec.length)]);
-
               var allCharacters =password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allLowercase[Math.floor(Math.random() * allLowercase.length)], allNums[Math.floor(Math.random() * allNums.length)] , allSpec[Math.floor(Math.random() * allSpec.length)]);
-
               var lowerNumSpec =  password.concat(allLowercase[Math.floor(Math.random() * allLowercase.length)] , allNums[Math.floor(Math.random() * allNums.length)] , allSpec[Math.floor(Math.random() * allSpec.length)]);
               var lowerNumber = password.concat(allLowercase[Math.floor(Math.random() * allLowercase.length)] , allNums[Math.floor(Math.random() * allNums.length)]);
               var lowerSpec = password.concat(allLowercase[Math.floor(Math.random() * allLowercase.length)] , allSpec[Math.floor(Math.random() * allSpec.length)]);
@@ -111,11 +109,14 @@ function generatePassword() {
                         // ALL CRITERIA CHOSEN
                         else if (useUpper && useLower && useNumbers && useSpecial)
                         password = allCharacters;
-
-                      }
+                        // IF NO CRITERIA SELECTED
+                        else if (!useUpper && !useLower && !useNumbers && !useSpecial)
+                        password = alert("SELECT ONE CRITERIA")
+                        
+        }
                       
-                      return password;
-                    }
+     return password;
+ }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
