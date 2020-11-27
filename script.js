@@ -55,35 +55,63 @@ function generatePassword() {
               var upperLowNum = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allLowercase[Math.floor(Math.random() * allLowercase.length)] , allNums[Math.floor(Math.random() * allNums.length)]);
               var upperLowSpec = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allLowercase[Math.floor(Math.random() * allLowercase.length)] , allSpec[Math.floor(Math.random() * allSpec.length)]);
               var upperNumSpec = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allNums[Math.floor(Math.random() * allNums.length)] , allSpec[Math.floor(Math.random() * allSpec.length)]);
-              var allCharacters = allUppercase + allLowercase + allNums + allSpec;
+
+              var allCharacters =password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)] , allLowercase[Math.floor(Math.random() * allLowercase.length)], allNums[Math.floor(Math.random() * allNums.length)] , allSpec[Math.floor(Math.random() * allSpec.length)]);
+
               var lowerNumSpec =  password.concat(allLowercase[Math.floor(Math.random() * allLowercase.length)] , allNums[Math.floor(Math.random() * allNums.length)] , allSpec[Math.floor(Math.random() * allSpec.length)]);
               var lowerNumber = password.concat(allLowercase[Math.floor(Math.random() * allLowercase.length)] , allNums[Math.floor(Math.random() * allNums.length)]);
-              var lowerSpec = allLowercase + allSpec;
-              var numsSpecs = allNums + allSpec;
+              var lowerSpec = password.concat(allLowercase[Math.floor(Math.random() * allLowercase.length)] , allSpec[Math.floor(Math.random() * allSpec.length)]);
+              var numsSpecs = password.concat(allNums[Math.floor(Math.random() * allNums.length)] , allSpec[Math.floor(Math.random() * allSpec.length)]);
           
-                  // PUTTING RESPECTED OUTCOMES TOGETHER WITH EMPTY PASSWORD
+                  // PUTTING RESPECTED OUTCOMES TOGETHER
 
-                        // USER ONLY WANTS CAPS - WORKS
+                        // ALL UPPER CASE
                         if (useUpper && !useLower && !useNumbers && !useSpecial){
                         password = password.concat(allUppercase[Math.floor(Math.random() * allUppercase.length)]);
                         }
+                        // ALL LOWER CASE
                         else if (!useUpper && useLower && !useNumbers && !useSpecial)
                         password = password.concat(allLowercase[Math.floor(Math.random() * allLowercase.length)]);
-                        
+                        // ALL NUMBERS
                         else if (!useUpper && !useLower && useNumbers && !useSpecial)
                         password = password.concat(allNums[Math.floor(Math.random() * allNums.length)]);
-                        
+                        // ALL SPECIAL CHARACTERS
                         else if (!useUpper && !useLower && !useNumbers && useSpecial)
                         password = password.concat(allSpec[Math.floor(Math.random() * allSpec.length)]);
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
+                        // ONLY UPPERCASE AND LOWERCASE
+                        else if (useUpper && useLower && !useNumbers && !useSpecial)
+                        password = upperLower;
+                        // ONLY UPPERCASE AND NUMBERS
+                        else if (useUpper && !useLower && useNumbers && !useSpecial)
+                        password = upperNumber;
+                        // ONLY UPPERCASE AND SPECIAL CHARACTERS
+                        else if (useUpper && !useLower && !useNumbers && useSpecial)
+                        password = upperSpec;
+                        // ONLY UPPERCASE = LOWERCASE - NUMBERS
+                        else if (useUpper && useLower && useNumbers && !useSpecial)
+                        password = upperLowNum;
+                        // ONLY UPPERCASE - LOWERCASE - SPECIAL CHARACTER
+                        else if (useUpper && useLower && !useNumbers && useSpecial)
+                        password = upperLowSpec;
+                        // ONLY UPPERCASE - NUMBERS - SPECIAL CHARACTER
+                        else if (useUpper && !useLower && useNumbers && useSpecial)
+                        password = upperNumSpec;
+                        // ONLY LOWERCASE - NUMBERS - SPECIAL CHARACTER
+                        else if (!useUpper && useLower && useNumbers && useSpecial)
+                        password = lowerNumSpec;
+                        // ONLY LOWERCASE AND NUMBERS
+                        else if (!useUpper && useLower && useNumbers && !useSpecial)
+                        password = lowerNumber;
+                        // ONLY LOWERCASE AND SPECIAL CHARACTERS
+                        else if (!useUpper && useLower && !useNumbers && useSpecial)
+                        password = lowerSpec;
+                        // ONLY NUMBERS AND SPECIAL CHARACTERS
+                        else if (!useUpper && !useLower && useNumbers && useSpecial)
+                        password = numsSpecs;
+                        // ALL CRITERIA CHOSEN
+                        else if (useUpper && useLower && useNumbers && useSpecial)
+                        password = allCharacters;
+
                       }
                       
                       return password;
