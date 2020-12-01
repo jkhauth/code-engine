@@ -1,6 +1,5 @@
 ## code-engine
-The application can be found at: https://jkhauth.github.io/code-engine/ 
-<br>
+The application can be found at: https://jkhauth.github.io/code-engine/
 Keeping your information private on the internet is hard and its easy using the same password over and over again. This application helps you create an unique password to keep your ID safe.
 
 ## functionality
